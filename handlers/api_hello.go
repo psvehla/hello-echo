@@ -10,7 +10,7 @@ import (
 // HelloHello - hello hello
 func (c *Container) HelloHello(ctx echo.Context) error {
 	return ctx.JSON(http.StatusOK, models.HelloWorld{
-		Message: "Hello World",
+		Message: "Hello, " + ctx.Param("name") + ".",
 	})
 }
 
